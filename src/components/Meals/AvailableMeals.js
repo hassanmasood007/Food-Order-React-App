@@ -10,7 +10,7 @@ const AvailableMeals = () => {
     useEffect(() => {
         const fetchMeals = async () => {
             setIsLoading(true);
-            const response = await fetch('https://fir-react-400cb-default-rtdb.firebaseio.com/meals.json');
+            const response = await fetch('firebase-realtime-database-link/meals.json');
 
             if (!response.ok) {
                 throw new Error('Somthing went Wrong');
