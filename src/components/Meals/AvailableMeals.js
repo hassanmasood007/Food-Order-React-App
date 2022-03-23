@@ -11,7 +11,7 @@ const AvailableMeals = () => {
     const fetchMeals = async () => {
       setIsLoading(true);
       const response = await fetch(
-        "https://fir-react-400cb-default-rtdb.firebaseio.com/meals.json"
+        "https://fir-react-400cb-default-rtdb.firebaseio.com/meals.json" // add your own firebase realtime database link
       );
 
       if (!response.ok) {

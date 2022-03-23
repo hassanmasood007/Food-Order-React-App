@@ -30,7 +30,7 @@ const Cart = (props) => {
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
-      "https://fir-react-400cb-default-rtdb.firebaseio.com/orders.json",
+      "https://fir-react-400cb-default-rtdb.firebaseio.com/orders.json", // add your own firebase realtime database link
       {
         method: "POST",
         body: JSON.stringify({
