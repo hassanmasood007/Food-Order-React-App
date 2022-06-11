@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-const dotenv = require("dotenv");
 
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
@@ -7,6 +6,7 @@ import classes from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
 import Checkout from "./Checkout";
 
+const dotenv = require("dotenv");
 dotenv.config();
 
 const Cart = (props) => {
@@ -31,6 +31,7 @@ const Cart = (props) => {
   };
 
   const submitOrderHandler = async (userData) => {
+    console.log(process.env.FIREBASE_KEY);
     setIsSubmitting(true);
     await fetch(
       process.env.FIREBASE_KEY, // add your own firebase realtime database link

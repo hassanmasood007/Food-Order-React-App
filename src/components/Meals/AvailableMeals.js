@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-const dotenv = require("dotenv");
 
 import Card from "../UI/Card";
 import classes from "./AvailableMeals.module.css";
 import MealItem from "./MealItem/MealItem";
 
+const dotenv = require("dotenv");
 dotenv.config();
 
 const AvailableMeals = () => {
