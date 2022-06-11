@@ -31,10 +31,10 @@ const Cart = (props) => {
   };
 
   const submitOrderHandler = async (userData) => {
-    console.log(process.env.FIREBASE_KEY);
+    console.log(process.env.FIREBASE_ORDERS);
     setIsSubmitting(true);
     await fetch(
-      process.env.FIREBASE_KEY, // add your own firebase realtime database link
+      process.env.REACT_APP_FIREBASE_ORDERS, // add your own firebase realtime database link
       {
         method: "POST",
         body: JSON.stringify({

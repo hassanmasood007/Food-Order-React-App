@@ -15,9 +15,9 @@ const AvailableMeals = () => {
     const fetchMeals = async () => {
       setIsLoading(true);
       const response = await fetch(
-        process.env.FIREBASE_KEY // add your own firebase realtime database link
+        process.env.REACT_APP_FIREBASE_MEALS // add your own firebase realtime database link
       );
-
+      console.log(process.env.FIREBASE_MEALS);
       if (!response.ok) {
         throw new Error("Somthing went Wrong");
       }
