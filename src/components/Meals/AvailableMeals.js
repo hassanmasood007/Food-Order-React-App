@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
+const dotenv = require("dotenv");
+
 import Card from "../UI/Card";
 import classes from "./AvailableMeals.module.css";
 import MealItem from "./MealItem/MealItem";
+
+dotenv.config();
 
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
@@ -11,7 +15,7 @@ const AvailableMeals = () => {
     const fetchMeals = async () => {
       setIsLoading(true);
       const response = await fetch(
-        "https://fir-react-400cb-default-rtdb.firebaseio.com/meals.json" // add your own firebase realtime database link
+        process.env.FIREBASE_KEY // add your own firebase realtime database link
       );
 
       if (!response.ok) {

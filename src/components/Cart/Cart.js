@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
+const dotenv = require("dotenv");
 
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
 import Checkout from "./Checkout";
+
+dotenv.config();
 
 const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
@@ -30,7 +33,7 @@ const Cart = (props) => {
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
-      "https://fir-react-400cb-default-rtdb.firebaseio.com/orders.json", // add your own firebase realtime database link
+      process.env.FIREBASE_KEY, // add your own firebase realtime database link
       {
         method: "POST",
         body: JSON.stringify({
